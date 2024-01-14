@@ -1,0 +1,35 @@
+{
+  "name": "Callbacker",
+  "version": "1.0.0",
+  "description": "http callback viewer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "jasine",
+    "mac": {
+      "category": "callbacker.app.jasine"
+    }
+  },
+  "keywords": [
+    "http",
+    "callback",
+    "echo"
+  ],
+  "author": "jasine",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-reloader": "^1.2.3"
+  },
+  "dependencies": {
+    "@aptabase/electron": "^0.3.1",
+    "json-formatter-js": "^2.3.4"
+  }
+}

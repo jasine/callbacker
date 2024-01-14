@@ -1,0 +1,3 @@
+tests/*.sh
+dist
+node_modules

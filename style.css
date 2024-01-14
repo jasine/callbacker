@@ -1,0 +1,271 @@
+body {
+    min-height: 100vh;
+}
+
+button,
+input {
+    -webkit-app-region: no-drag;
+}
+
+/*
+  下面是系统按钮
+  */
+#title-bar {
+    -webkit-app-region: drag;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    background-color: transparent;
+    /* 设置标题栏背景为透明 */
+    padding: 13px;
+}
+
+#window-controls {
+    display: flex;
+    -webkit-app-region: no-drag;
+}
+
+.window-control-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    /* 初始状态下按钮背景透明 */
+    transition: background-color 0.25s;
+    /* 悬停时背景颜色渐变 */
+}
+
+.window-control-icon {
+    font-size: 10px;
+    color: transparent;
+    /* 初始状态下图标透明 */
+    transition: color 0.25s;
+    /* 悬停时图标颜色渐变 */
+}
+
+#close-btn:hover,
+#min-btn:hover,
+#max-btn:hover {
+    background-color: #ffffff;
+}
+
+#close-btn {
+    background-color: #ff5f56;
+}
+
+#min-btn {
+    background-color: #ffbd2e;
+}
+
+#max-btn {
+    background-color: #27c93f;
+}
+
+#close-btn:hover .window-control-icon {
+    color: #ff5f56;
+    /* 悬停时关闭按钮图标颜色 */
+}
+
+#min-btn:hover .window-control-icon {
+    color: #ffbd2e;
+    /* 悬停时最小化按钮图标颜色 */
+}
+
+#max-btn:hover .window-control-icon {
+    color: #27c93f;
+    /* 悬停时最大化按钮图标颜色 */
+}
+
+
+#listen-btn {
+    margin-right: 10px;
+}
+
+.request-summary {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.request-summary-id{
+    font-weight: 400;
+}
+
+.request-summary-time{
+    font-weight: 200;
+    font-size: small;
+}
+
+.request-summary:hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.request-summary-selected {
+    background-color: #f0f0f0;
+}
+
+.selected {
+    background-color: #e9ecef;
+}
+
+.theme-switcher {
+    cursor: pointer;
+}
+
+.theme-switcher i {
+    margin-right: 5px;
+}
+
+#toolbar {
+    padding-top: 0.5rem;
+    padding-bottom: 0.1rem;
+}
+
+.toolbar-btn {
+    background-color: transparent;
+    border: none;
+    color: green;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.status-light-off,
+.status-light-on {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-left: 10px;
+    /* 其他样式，根据需要添加 */
+}
+
+.status-light-off {
+    background-color: gray;
+}
+
+.status-light-on {
+    background-color: green;
+}
+
+.http-line {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.http-line-path{
+    margin-left: 10px;
+    font-size: large;
+}
+
+
+
+
+/* 主要功能区 */
+#main-content {
+    display: flex;
+    align-items: stretch;
+    height: calc(100vh - 70px);
+}
+
+
+
+#request-list {
+    min-width: 250px;
+}
+
+#request-details {
+    flex: 1;
+    min-width: 400px;
+    padding-left: 10px;
+}
+
+
+#request-list,
+#request-details {
+    transition: flex-basis 0.2s;
+    /* 可选，为调整大小添加动画效果 */
+    overflow: auto;
+    /* 防止内容溢出 */
+    overflow-y: auto;
+}
+
+#drag-handle {
+    flex: 0 0 1px;
+    background: #dee2e6;
+    
+    cursor: col-resize;
+    user-select: none;
+}
+
+
+
+.emoji-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-size: 10em;
+    opacity: 0.7;
+    height: 100%;
+}
+
+#body-container{
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+dt{
+    font-weight: 500;
+}
+
+
+/* 状态栏 */
+#status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* border-top: 1px solid #ddd; */
+    /* 状态栏顶部边框 */
+    padding: 5px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.status-bar-on {
+    background-color: rgb(225, 163, 8);
+}
+
+.status-bar-off {
+    background-color: #eee;
+}
+
+#status-bar p {
+    margin: 0;
+}
+
+
+/* 标签页切换 */
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--bs-nav-tabs-link-active-color);
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    border-bottom: 3px solid #0d6efd;
+    /* 选中的tab页下边框变粗，颜色可以自定义 */
+    border-radius: 0;
+    /* 如果需要可以去掉圆角 */
+}
+
+.tab-content>.tab-pane {
+    border: none;
+    margin-left: 5px;
+    /* 去掉内容区域的边框 */
+}
