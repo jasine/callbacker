@@ -18,7 +18,9 @@
   "keywords": [
     "http",
     "callback",
-    "echo"
+    "echo",
+    "server",
+    "viewer"
   ],
   "author": "jasine",
   "license": "MIT",
