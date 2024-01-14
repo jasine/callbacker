@@ -130,10 +130,13 @@ function updateRequestDetails(request) {
         bodyElement.appendChild(formatter.render());
         formatter.openAtDepth(Infinity);
 
-        var links = document.querySelectorAll('#body-content a');
-        for (var i = 0; i < links.length; i++) {
-            links[i].setAttribute('target', '_blank');
-        }
+        setTimeout(()=>{
+            var links = document.querySelectorAll('.json-formatter-url');
+            for (var i = 0; i < links.length; i++) {
+                links[i].setAttribute('target', '_blank');
+            }
+        },400)
+        
 
         rawBodyElement.innerText = request.body;
     }
