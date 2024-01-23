@@ -12,7 +12,11 @@
   "build": {
     "appId": "jasine",
     "mac": {
-      "category": "callbacker.app.jasine"
+      "category": "callbacker.app.jasine",
+      "target": {
+        "target": "default",
+        "arch": ["universal"]
+      }
     }
   },
   "keywords": [
@@ -32,6 +36,7 @@
   },
   "dependencies": {
     "@aptabase/electron": "^0.3.1",
+    "@electron/osx-sign": "^1.0.5",
     "json-formatter-js": "^2.3.4"
   }
 }
