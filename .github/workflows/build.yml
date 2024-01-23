@@ -23,7 +23,7 @@ jobs:
         node-version: '21'
 
     - name: Install Dependencies
-      run: npm ci
+      run: npm i
 
     - name: Build and Release
       run: npm run dist
